@@ -15,7 +15,7 @@ public interface DoctorRepository extends JpaRepository<Doctor, Long> {
      * @param id проверяемого доктора
      */
     @Query(value = "SELECT COUNT(R.DOCTOR_ID) AS Количество " +
-            "FROM DOKTOR AS D INNER JOIN RECIPE AS R " +
+            "FROM DOCTOR AS D INNER JOIN RECIPE AS R " +
             "ON R.DOCTOR_ID = D.ID WHERE D.ID = :id", nativeQuery = true)
     int getNumberOfIssuedRecipes(@Param("id") Long id);
 }

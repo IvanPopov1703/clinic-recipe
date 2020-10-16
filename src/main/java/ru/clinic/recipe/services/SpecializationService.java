@@ -50,6 +50,7 @@ public class SpecializationService {
      * @param specialization добавляемый объект
      * */
     public void save(Specialization specialization){
+        specialization.setId(1L);
         Specialization tmpSpecialization = specializationRepository.save(specialization);
     }
 
